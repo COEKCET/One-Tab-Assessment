@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="preload" as="image" href="logo.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #4A90E2, #9013FE);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .logo {
+            width: 100px; /* Adjusted size */
+            height: 100px; /* Adjusted size */
+            margin-top: 5px;
+            animation: rotate3D 3s linear infinite;
+        }
+        @keyframes rotate3D {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+        .container {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        h1 {
+            color: #FFD700; /* Gold Color */
+        }
+        h2 {
+            color: #fffceb; 
+        }
+        h3 {
+            font-size: 2em;
+            color: #fff09d; 
+            text-shadow: 2px 2px 5px #b8860b, 4px 4px 10px #ffcc00, 6px 6px 15px #fff;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const logo = document.querySelector(".logo");
+            logo.src = logo.dataset.src;
+        });
+        setTimeout(function() {
+            window.location.href = "Home.html"; // Change to actual next page URL
+        }, 10000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="logo-small.png" data-src="logo.png" alt="KCET Logo" class="logo"> <!-- Lazy Loading Logo -->
+        <h1>Kamaraj College of Engineering and Technology</h1>
+        <h2>9204 - Controller of Examination Office</h2>
+        <h3>Welcome to One Tab Assessment</h3>
+    </div>
+</body>
+</html>
